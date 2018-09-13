@@ -1,1 +1,30 @@
-My project 
+
+Project directory name is bolla.1
+
+
+TASK 1:
+The Makefile can be executed using make all.
+This generates all the executables.
+Type ./simplechain [arguments] 
+
+TO clean type make clean.
+
+TASK 2:
+ Used git for version control.
+        Type gitlog
+
+TASK 3 & TASK 4: 
+
+The filename used is problem3.c
+Type ./problem3 -p
+     ./problem3 -h 
+     ./problem3 -n 3
+
+TASK 5: 
+
+The file names for exercise 3.8 are given as
+simplechain2.c
+simplechain5.c
+simplechain6.c
+simplechain7.c
+simplechain8.c 

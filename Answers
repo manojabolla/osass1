@@ -1,0 +1,365 @@
+TASK 1:
+
+Makefile:
+
+[bolla@hoare7 osass1]$ vi Makefile
+[bolla@hoare7 osass1]$ make all
+gcc -g -c simplechain.c
+gcc -o simplechain simplechain.o
+gcc -g -c simplechain2.c
+gcc -o simplechain2 simplechain2.o
+gcc -g -c simplechain5.c
+gcc -o simplechain5 simplechain5.o
+gcc -g -c simplechain6.c
+gcc -o simplechain6 simplechain6.o
+gcc -g -c simplechain7.c
+gcc -o simplechain7 simplechain7.o
+gcc -g -c simplechain8.c
+gcc -o simplechain8 simplechain8.o
+gcc -g -c problem3.c
+gcc -o problem3 problem3.o
+
+
+
+TASK 2:
+
+[bolla@hoare7 bolla.1]$ git init
+Initialized empty Git repository in /classes/OS/bolla/bolla.1/.git/
+[bolla@hoare7 bolla.1]$ git add *
+[bolla@hoare7 bolla.1]$ git commit -m " First commit"
+[master (root-commit) 74b3311]  First commit
+
+[bolla@hoare7 bolla.1]$ git remote add origin https://github.com/manojabolla/osass1.git
+[bolla@hoare7 bolla.1]$ git push -u origin master
+Username for 'https://github.com': manoja.bolla95@gmail.com
+Password for 'https://manoja.bolla95@gmail.com@github.com':
+
+[bolla@hoare7 bolla.1]$ git log
+commit 74b3311b4004709ac924803a9491d88ad77657bf
+Author: manoja bolla <bolla@hoare7.cs.umsl.edu>
+Date:   Wed Sep 12 15:04:46 2018 -0500
+
+     First commit
+
+TASK 3 & 4:
+
+[bolla@hoare7 bolla.1]$ make problem3
+gcc -g -c problem3.c
+gcc -o problem3 problem3.o
+[bolla@hoare7 bolla.1]$ ./problem3 -p
+./problem3 Error: Prints system error
+: Success
+[bolla@hoare7 bolla.1]$ ./problem3 -n 3
+i:1 process ID:22875 parent ID:2012 child ID:22876
+i:2 process ID:22876 parent ID:1 child ID:22877
+i:3 process ID:22877 parent ID:22876 child ID:0
+[bolla@hoare7 bolla.1]$ ./problem3 -h
+Usage: ./problem3 processes -h help -p perror
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+EXERCISE:3.8
+ 
+ 
+PROBLEM 1:
+ 
+[bolla@hoare7 osass1]$ ./simplechain 2
+i:1 process ID:6499 parent ID:26986 child ID:6500
+i:2 process ID:6500 parent ID:6499 child ID:0
+[bolla@hoare7 osass1]$ ./simplechain 4
+i:1 process ID:6512 parent ID:26986 child ID:6513
+i:2 process ID:6513 parent ID:6512 child ID:6514
+i:3 process ID:6514 parent ID:1 child ID:6515
+i:4 process ID:6515 parent ID:1 child ID:0
+[bolla@hoare7 osass1]$ ./simplechain 8
+i:1 process ID:6721 parent ID:26986 child ID:6722
+i:2 process ID:6722 parent ID:6721 child ID:6723
+i:3 process ID:6723 parent ID:1 child ID:6724
+[bolla@hoare7 osass1]$ i:4 process ID:6724 parent ID:1 child ID:6725
+i:5 process ID:6725 parent ID:1 child ID:6726
+i:6 process ID:6726 parent ID:6725 child ID:6727
+i:7 process ID:6727 parent ID:1 child ID:6728
+i:8 process ID:6728 parent ID:6727 child ID:0
+./simplechain 16
+i:1 process ID:6774 parent ID:26986 child ID:6775
+i:2 process ID:6775 parent ID:1 child ID:6776
+i:3 process ID:6776 parent ID:6775 child ID:6777
+i:4 process ID:6777 parent ID:6776 child ID:6778
+[bolla@hoare7 osass1]$ i:5 process ID:6778 parent ID:1 child ID:6779
+i:6 process ID:6779 parent ID:6778 child ID:6780
+i:7 process ID:6780 parent ID:6779 child ID:6781
+i:8 process ID:6781 parent ID:1 child ID:6782
+i:9 process ID:6782 parent ID:1 child ID:6783
+i:10 process ID:6783 parent ID:6782 child ID:6784
+i:11 process ID:6784 parent ID:6783 child ID:6785
+i:12 process ID:6785 parent ID:1 child ID:6786
+i:13 process ID:6786 parent ID:6785 child ID:6787
+i:14 process ID:6787 parent ID:6786 child ID:6788
+i:16 process ID:6789 parent ID:6788 child ID:0
+i:15 process ID:6788 parent ID:6787 child ID:6789
+./simplechain 20
+i:1 process ID:6838 parent ID:26986 child ID:6839
+i:2 process ID:6839 parent ID:1 child ID:6840
+i:3 process ID:6840 parent ID:6839 child ID:6841
+i:4 process ID:6841 parent ID:1 child ID:6842
+i:5 process ID:6842 parent ID:6841 child ID:6843
+[bolla@hoare7 osass1]$ i:6 process ID:6843 parent ID:1 child ID:6844
+i:7 process ID:6844 parent ID:6843 child ID:6845
+i:8 process ID:6845 parent ID:1 child ID:6846
+i:9 process ID:6846 parent ID:6845 child ID:6847
+i:10 process ID:6847 parent ID:6846 child ID:6848
+i:11 process ID:6848 parent ID:1 child ID:6849
+i:12 process ID:6849 parent ID:6848 child ID:6850
+i:13 process ID:6850 parent ID:1 child ID:6851
+i:14 process ID:6851 parent ID:6850 child ID:6852
+i:15 process ID:6852 parent ID:6851 child ID:6853
+i:16 process ID:6853 parent ID:1 child ID:6854
+i:17 process ID:6854 parent ID:1 child ID:6855
+i:18 process ID:6855 parent ID:1 child ID:6856
+i:19 process ID:6856 parent ID:6855 child ID:6857
+i:20 process ID:6857 parent ID:6856 child ID:0
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PROBLEM 2:
+
+./simplechain 4
+
+i=1 process ID:7247
+
+i=2 process ID:7248
+
+i=3 process ID:7249
+
+i=4 process ID:7250
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PROBLEM 3:
+
+Input n       init       fraction
+10             2            0.2
+15	       4 	    0.26
+20             6	    0.3
+25	       9       	    0.36
+30	       13	    2.30
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PROBLEM 4:
+
+[bolla@hoare7 osass1]$ ./simplechain2 30
+i:1 process ID:11680 parent ID:8726 child ID:11681
+i:2 process ID:11681 parent ID:11680 child ID:11682
+i:4 process ID:11683 parent ID:11682 child ID:11684
+i:5 process ID:11684 parent ID:11683 child ID:11685
+i:6 process ID:11685 parent ID:11684 child ID:11686
+i:7 process ID:11686 parent ID:11685 child ID:11687
+[bolla@hoare7 osass1]$ i:8 process ID:11687 parent ID:11686 child ID:11688
+i:3 process ID:11682 parent ID:1 child ID:11683
+i:9 process ID:11688 parent ID:1 child ID:11689
+i:10 process ID:11689 parent ID:11688 child ID:11690
+i:11 process ID:11690 parent ID:11689 child ID:11691
+i:12 process ID:11691 parent ID:11690 child ID:11692
+i:13 process ID:11692 parent ID:11691 child ID:11693
+i:14 process ID:11693 parent ID:1 child ID:11694
+i:15 process ID:11694 parent ID:11693 child ID:11695
+i:16 process ID:11695 parent ID:11694 child ID:11696
+i:18 process ID:11697 parent ID:11696 child ID:11698
+i:17 process ID:11696 parent ID:1 child ID:11697
+i:19 process ID:11698 parent ID:11697 child ID:11699
+i:20 process ID:11699 parent ID:11698 child ID:11700
+i:21 process ID:11700 parent ID:1 child ID:11701
+i:22 process ID:11701 parent ID:11700 child ID:11702
+i:23 process ID:11702 parent ID:11701 child ID:11703
+i:24 process ID:11703 parent ID:11702 child ID:11704
+i:25 process ID:11704 parent ID:1 child ID:11705
+i:26 process ID:11705 parent ID:11704 child ID:11706
+i:27 process ID:11706 parent ID:1 child ID:11707
+i:28 process ID:11707 parent ID:11706 child ID:-1
+
+[bolla@hoare7 osass1]$ ./simplechain2 34
+i:1 process ID:11761 parent ID:8726 child ID:11762
+i:2 process ID:11762 parent ID:11761 child ID:11763
+i:3 process ID:11763 parent ID:1 child ID:11764
+i:4 process ID:11764 parent ID:11763 child ID:11765
+i:5 process ID:11765 parent ID:11764 child ID:11766
+i:6 process ID:11766 parent ID:11765 child ID:11767
+i:7 process ID:11767 parent ID:11766 child ID:11768
+i:8 process ID:11768 parent ID:11767 child ID:11769
+[bolla@hoare7 osass1]$ i:10 process ID:11770 parent ID:11769 child ID:11771
+i:9 process ID:11769 parent ID:1 child ID:11770
+i:11 process ID:11771 parent ID:1 child ID:11772
+i:12 process ID:11772 parent ID:11771 child ID:11773
+i:13 process ID:11773 parent ID:1 child ID:11774
+i:14 process ID:11774 parent ID:11773 child ID:11775
+i:15 process ID:11775 parent ID:1 child ID:11776
+i:16 process ID:11776 parent ID:11775 child ID:11777
+i:17 process ID:11777 parent ID:1 child ID:11778
+i:18 process ID:11778 parent ID:11777 child ID:11779
+i:19 process ID:11779 parent ID:1 child ID:11780
+i:20 process ID:11780 parent ID:11779 child ID:11781
+i:21 process ID:11781 parent ID:1 child ID:11782
+i:22 process ID:11782 parent ID:11781 child ID:11783
+i:23 process ID:11783 parent ID:1 child ID:11784
+i:24 process ID:11784 parent ID:11783 child ID:11785
+i:25 process ID:11785 parent ID:1 child ID:11786
+i:26 process ID:11786 parent ID:11785 child ID:11787
+i:28 process ID:11788 parent ID:11787 child ID:-1
+i:27 process ID:11787 parent ID:1 child ID:11788
+
+[bolla@hoare7 osass1]$ ./simplechain2 38
+i:1 process ID:11889 parent ID:8726 child ID:11890
+i:2 process ID:11890 parent ID:1 child ID:11891
+i:4 process ID:11892 parent ID:11891 child ID:11893
+[bolla@hoare7 osass1]$ i:5 process ID:11893 parent ID:11892 child ID:11894
+i:3 process ID:11891 parent ID:1 child ID:11892
+i:6 process ID:11894 parent ID:11893 child ID:11895
+i:7 process ID:11895 parent ID:11894 child ID:11896
+i:8 process ID:11896 parent ID:1 child ID:11897
+i:9 process ID:11897 parent ID:11896 child ID:11898
+i:10 process ID:11898 parent ID:1 child ID:11899
+i:11 process ID:11899 parent ID:1 child ID:11900
+i:12 process ID:11900 parent ID:11899 child ID:11901
+i:13 process ID:11901 parent ID:1 child ID:11902
+i:14 process ID:11902 parent ID:1 child ID:11903
+i:15 process ID:11903 parent ID:11902 child ID:11904
+i:16 process ID:11904 parent ID:1 child ID:11905
+i:17 process ID:11905 parent ID:1 child ID:11906
+i:18 process ID:11906 parent ID:1 child ID:11907
+i:19 process ID:11907 parent ID:11906 child ID:11908
+i:20 process ID:11908 parent ID:11907 child ID:11909
+i:21 process ID:11909 parent ID:1 child ID:11910
+i:22 process ID:11910 parent ID:1 child ID:11911
+i:23 process ID:11911 parent ID:11910 child ID:11912
+i:24 process ID:11912 parent ID:1 child ID:11913
+i:25 process ID:11913 parent ID:11912 child ID:11914
+i:26 process ID:11914 parent ID:1 child ID:11915
+i:27 process ID:11915 parent ID:11914 child ID:11916
+i:28 process ID:11916 parent ID:11915 child ID:-1
+
+The maximum number of processes generated when sleep(10) is placed is 28.
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+PROBLEM 5: 
+
+[bolla@hoare7 osass1]$ vi simplechain5.c
+[bolla@hoare7 osass1]$ make simplechain5
+gcc -g -c simplechain5.c
+gcc -o simplechain5 simplechain5.o
+[bolla@hoare7 osass1]$ ./simplechain5 -n2 -k 2 -m 5
+i:1 process ID:30537 parent ID:14115 child ID:30538
+i:2 process ID:30538 parent ID:30537 child ID:0
+i:1 process ID:30537 parent ID:14115 child ID:30538
+i:2 process ID:30538 parent ID:30537 child ID:0
+^[[A^[[[bolla@hoare7 osass1]$ ./simplechain5 -n3 -k 2 -m 10
+i:1 process ID:30576 parent ID:14115 child ID:30577
+i:2 process ID:30577 parent ID:30576 child ID:30578
+i:3 process ID:30578 parent ID:30577 child ID:0
+i:1 process ID:30576 parent ID:14115 child ID:30577
+i:3 process ID:30578 parent ID:30577 child ID:0
+i:2 process ID:30577 parent ID:30576 child ID:30578
+
+
+
+_______________________________________________________________________________________________________________
+______________________________________________________________________________________________________________________________
+
+PROBLEM 6:  
+
+[bolla@hoare7 osass1]$ ./simplechain6 4
+i:4 process ID:22473 parent ID:22472 child ID:0
+i:3 process ID:22472 parent ID:22471 child ID:22473
+i:2 process ID:22471 parent ID:22470 child ID:22472
+i:1 process ID:22470 parent ID:14115 child ID:22471
+[bolla@hoare7 osass1]$ ./simplechain6 8
+i:8 process ID:22486 parent ID:22485 child ID:0
+i:7 process ID:22485 parent ID:22484 child ID:22486
+i:6 process ID:22484 parent ID:22483 child ID:22485
+i:5 process ID:22483 parent ID:22482 child ID:22484
+i:4 process ID:22482 parent ID:22481 child ID:22483
+i:3 process ID:22481 parent ID:22480 child ID:22482
+i:2 process ID:22480 parent ID:22479 child ID:22481
+i:1 process ID:22479 parent ID:14115 child ID:22480
+[bolla@hoare7 osass1]$ ./simplechain6 10
+i:10 process ID:23526 parent ID:23525 child ID:0
+i:9 process ID:23525 parent ID:23524 child ID:23526
+i:8 process ID:23524 parent ID:23523 child ID:23525
+i:7 process ID:23523 parent ID:23522 child ID:23524
+i:6 process ID:23522 parent ID:23521 child ID:23523
+i:5 process ID:23521 parent ID:23520 child ID:23522
+i:4 process ID:23520 parent ID:23519 child ID:23521
+i:3 process ID:23519 parent ID:23518 child ID:23520
+i:2 process ID:23518 parent ID:23517 child ID:23519
+i:1 process ID:23517 parent ID:14115 child ID:23518
+
+The parent process continues its execution after wait system call for the child process to execute.
+
+______________________________________________________________________________________________________________________________
+______________________________________________________________________________________________________________________________
+
+PROBLEM 7:
+
+[bolla@hoare7 osass1]$ ./simplechain7 2
+i:1 process ID:25824parent ID:14115child ID:25825
+i:2 process ID:25825parent ID:25824child ID:0
+[bolla@hoare7 osass1]$ ./simplechain7 4
+i:1 process ID:25831parent ID:14115child ID:25832
+i:2 process ID:25832parent ID:1child ID:25833
+i:3 process ID:25833parent ID:1child ID:25834
+i:4 process ID:25834parent ID:25833child ID:0
+[bolla@hoare7 osass1]$ ./simplechain7 6
+i:1 process ID:25885parent ID:14115child ID:25886
+i:2 process ID:25886parent ID:1child ID:25887
+i:3 process ID:25887parent ID:25886child ID:25888
+i:4 process ID:25888parent ID:1child ID:25889
+[bolla@hoare7 osass1]$ i:5 process ID:25889i:6 process ID:25890parent ID:1
+child ID:25890
+i:6 parent ID:25889child ID:0
+
+[bolla@hoare7 osass1]$ ./simplechain7 8
+i:1 process ID:25987parent ID:14115child ID:25988
+i:2 process ID:25988parent ID:1child ID:25989
+i:3 process ID:25989parent ID:1child ID:25990
+i:4 process ID:25990parent ID:1child ID:25991
+[bolla@hoare7 osass1]$ i:5 process ID:25991parent ID:1child ID:25992
+i:6 process ID:25992parent ID:1child ID:25993
+i:7 process ID:25993i:8 process ID:25994parent ID:1parent ID:25993child ID:25994
+child ID:0
+
+______________________________________________________________________________________________________________________________
+______________________________________________________________________________________________________________________________
+
+
+PROBLEM 8:
+
+[bolla@hoare7 osass1]$ vi simplechain8.c
+[bolla@hoare7 osass1]$ make simplechain8
+gcc -g -c simplechain8.c
+gcc -o simplechain8 simplechain8.o
+[bolla@hoare7 osass1]$ ./simplechain8 -n 2 -k 4
+hell
+n value is 2
+nchars values is 4
+The string is hell
+process ID:17678:hell
+process ID:17690:hell
+[bolla@hoare7 osass1]$ ./simplechain8 -n 5 -k 4
+hello
+n value is 5
+nchars values is 4
+The string is hell
+process ID:17711:hell
+process ID:17717:hell
+process ID:17718:hell
+process ID:17720:hell
+process ID:17719:hell
+
+
+
+
+
+
+
+
